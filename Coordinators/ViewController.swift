@@ -10,11 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tfUser: UITextField!
+    weak var coordinator: (AccountCreating & Logging)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func login(_ sender: Any) {
+        coordinator?.login(user: tfUser.text!)
+    }
+    
+    @IBAction func createAccount(_ sender: Any) {
+        coordinator?.createAccount()
+    }
+    
 }
 
